@@ -1,11 +1,11 @@
-.task__02 {
+@import '../common/01-variables.less';
+
+.task {
     background     : #3FAF82;
     display        : flex;
     align-items    : center;
     justify-content: center;
     flex-direction : column;
-
-    border: 10px solid red;
 }
 
 .elem {
@@ -18,21 +18,19 @@
     position        : relative;
 
     &__top {
-        top: 15px;
-
         &--active {
-            animation: top 0.3s ease-in-out forwards, top-active 0.3s linear forwards 0.3s;
+            animation: top-start @timer ease-in-out forwards, top-active @timer linear forwards @timer;
         }
 
         &--disactive {
-            animation: top-dis 0.3s ease-in-out forwards, top-disactive 0.3s ease-in-out forwards 0.3s;
+            animation: top-dis @timer ease-in-out forwards, top-disactive @timer ease-in-out forwards @timer;
         }
 
     }
 
     &__middle {
         &--active {
-            animation: middle 0.3s ease-in-out forwards;
+            animation: middle-start @timer ease-in-out forwards;
         }
 
         &--disactive {
@@ -42,16 +40,16 @@
 
     &__bottom {
         &--active {
-            animation: bottom 0.3s ease-in-out forwards, bottom-active 0.3s linear forwards 0.3s;
+            animation: bottom-start @timer ease-in-out forwards, bottom-active @timer linear forwards @timer;
         }
 
         &--disactive {
-            animation: bottom-dis 0.3s ease-in-out forwards, bottom-disactive 0.3s ease-in-out forwards 0.3s;
+            animation: bottom-dis @timer ease-in-out forwards, bottom-disactive @timer ease-in-out forwards @timer;
         }
     }
 }
 
-@keyframes top {
+@keyframes top-start {
     from {
         top: 0;
     }
@@ -82,12 +80,16 @@
 }
 
 @keyframes top-disactive {
+    from {
+        top: 15px;
+    }
+
     to {
         top: 0px;
     }
 }
 
-@keyframes bottom {
+@keyframes bottom-start {
     from {
         bottom: 0;
     }
@@ -127,7 +129,7 @@
     }
 }
 
-@keyframes middle {
+@keyframes middle-start {
     from {
         width           : 70px;
         transform-origin: center center;

@@ -4,8 +4,8 @@
 class Task_02 {
     constructor(top, middle, bottom) {
         this.topElem = document.querySelector('.elem__top');
-        this.middleElem = document.querySelector('.elem__bottom');
-        this.bottomElem = document.querySelector('.elem__middle');
+        this.middleElem = document.querySelector('.elem__middle');
+        this.bottomElem = document.querySelector('.elem__bottom');
     }
 
     init() {
