@@ -1,0 +1,145 @@
+.task__02 {
+    background     : #3FAF82;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    flex-direction : column;
+}
+
+.elem-02 {
+    width           : 70px;
+    height          : 7px;
+    background-color: #FFF;
+    margin-bottom   : 8px;
+    border-radius   : 5px;
+    position        : relative;
+    box-shadow      : 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+
+    &__top {
+        &--active {
+            animation: top 0.3s ease-in-out forwards, top-active 0.3s linear forwards 0.3s;
+        }
+
+        &--disactive {
+            animation: top-dis 0.3s ease-in-out forwards, top-disactive 0.3s ease-in-out forwards 0.3s;
+        }
+
+    }
+
+    &__middle {
+        &--active {
+            animation: middle 0.3s ease-in-out forwards;
+        }
+
+        &--disactive {
+            animation: middle-dis 0.6s ease-in-out forwards;
+        }
+    }
+
+    &__bottom {
+        &--active {
+            animation: bottom 0.3s ease-in-out forwards, bottom-active 0.3s linear forwards 0.3s;
+        }
+
+        &--disactive {
+            animation: bottom-dis 0.3s ease-in-out forwards, bottom-disactive 0.3s ease-in-out forwards 0.3s;
+        }
+    }
+}
+
+@keyframes top {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 15px;
+    }
+}
+
+@keyframes top-active {
+    to {
+        transform-origin: center center;
+        transform       : rotate(45deg);
+    }
+}
+
+@keyframes top-dis {
+    from {
+        transform: rotate(45deg);
+        top      : 15px;
+    }
+
+    to {
+        top             : 15px;
+        transform-origin: center center;
+        transform       : rotate(0deg);
+    }
+}
+
+@keyframes top-disactive {
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes bottom {
+    from {
+        bottom: 0;
+    }
+
+    to {
+        bottom: 15px;
+    }
+}
+
+@keyframes bottom-active {
+    to {
+        transform       : rotate(135deg);
+        transform-origin: center center;
+    }
+}
+
+@keyframes bottom-dis {
+    from {
+        transform: rotate(135deg);
+        bottom   : 15px
+    }
+
+    to {
+        bottom          : 15px;
+        transform       : rotate(0deg);
+        transform-origin: center center;
+    }
+}
+
+@keyframes bottom-disactive {
+    from {
+        bottom: 15px;
+    }
+
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes middle {
+    from {
+        width           : 70px;
+        transform-origin: center center;
+    }
+
+    to {
+        transform: scale(0)
+    }
+}
+
+@keyframes middle-dis {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
