@@ -2,7 +2,7 @@ const gulp = require("gulp");
 const less = require("gulp-less");
 const concat = require("gulp-concat");
 var cssmin = require("gulp-cssmin");
-//const sourcemaps = require("gulp-sourcemaps");
+const sourcemaps = require("gulp-sourcemaps");
 const gulpIf = require("gulp-if");
 const del = require("del");
 const browserSync = require("browser-sync").create();
@@ -14,7 +14,7 @@ const remember = require("gulp-remember");
 //const imagemin = require("gulp-imagemin");
 //const pngquant = require("imagemin-pngquant");
 //const webp = require("gulp-webp");
-//const htmlmin = require("gulp-htmlmin");
+const htmlmin = require("gulp-htmlmin");
 
 let isDevelopment =
     !process.env.NODE_ENV || process.env.NODE_ENV == "development";
@@ -22,7 +22,7 @@ let isDevelopment =
 gulp.task("less", () => {
     return (
         gulp
-            .src("frontend/styles/*.less", { since: gulp.lastRun("less") })
+            .src("src/styles/**/*.less", { since: gulp.lastRun("less") })
             .pipe(
                 plumber({
                     errorHandler: notify.onError(function (err) {
@@ -45,7 +45,7 @@ gulp.task("less", () => {
 
 gulp.task("js", () => {
     return gulp
-        .src("frontend/scripts/**/*.js")
+        .src("src/scripts/**/*.js")
         .pipe(
             plumber({
                 errorHandler: notify.onError(err => {
@@ -60,7 +60,7 @@ gulp.task("js", () => {
         .pipe(gulpIf(isDevelopment, sourcemaps.init()))
         .pipe(
             rollup({
-                input: "./frontend/scripts/main.js",
+                input: "./src/scripts/main.js",
                 output: {
                     format: "iife"
                 }
@@ -77,21 +77,20 @@ gulp.task("clean", () => {
 
 gulp.task("copy", () => {
     return gulp
-        .src("frontend/*.html")
+        .src("src/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("public"));
 });
 
 gulp.task("watch", () => {
-    gulp.watch("frontend/**/*.less", gulp.series("less"));
-    gulp.watch("frontend/*.html", gulp.series("copy"));
-    gulp.watch("frontend/scripts/**/*.js", gulp.series("js"));
-    gulp.watch("frontend/scripts/src/downloadData.js", gulp.series("getData"));
+    gulp.watch("src/**/*.less", gulp.series("less"));
+    gulp.watch("src/*.html", gulp.series("copy"));
+    gulp.watch("src/scripts/**/*.js", gulp.series("js"));
 });
 
 gulp.task(
     "build",
-    gulp.series("clean", "getData", gulp.parallel("less", "copy", "js", "retina"))
+    gulp.series("clean", gulp.parallel("less", "copy", "js"))
 );
 
 gulp.task("serve", () => {
