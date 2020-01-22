@@ -1,5 +1,5 @@
 .task {
-    &__03 {
+    &__04 {
         width: 100%;
         height: 100%;
         background-color: #E56262;
@@ -8,6 +8,7 @@
 
 .circle {
     position: relative;
+
     &__elem {
         position: absolute;
         left: 0;
@@ -21,20 +22,67 @@
         &--big {
             width: 90px;
             height: 90px;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.22);
-            animation: bigCircleAppear 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
-            //animation-delay: 2s;
+            animation: bigCircle 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
+        }
+
+        &--middle {
+            width: 60px;
+            height: 60px;
+            animation: middleCircle 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
+        }
+
+        &--little {
+            width: 30px;
+            height: 30px;
+            animation: littleCircle 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
         }
     }
-    // cubic-bezier(0.21, 0.98, 0.6, 0.99)
+
+    &__btn {
+        width: 50px;
+        height: 20px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background-color: inherit;
+        box-shadow: none;
+        border: none;
+        border-radius: 10px;
+    }
 }
 
-@keyframes bigCircleAppear {
-    from {
+@keyframes bigCircle {
+    from, 10% {
         transform: scale(0);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     }
     
     to {
         transform: scale(1);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes middleCircle {
+    from, 40% {
+        transform: scale(0);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    to {
+        transform: scale(1);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes littleCircle {
+    from, 70% {
+        transform: scale(0);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    to {
+        transform: scale(1);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 }
