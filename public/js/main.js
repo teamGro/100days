@@ -41,8 +41,40 @@ class Task_02 {
 
 let task_02 = new Task_02();
 
+class Task_04 {
+    constructor(parent) {
+        this.parent = document.querySelector('.circle_container');      
+    }
+
+    init() {
+        let text = {
+            active: 'Run',
+            pause: 'Stop'
+        };
+
+        let btn = document.querySelector('#task-04-btn');
+        btn.addEventListener('click', () => {
+            if (this.parent.classList.contains('paused')) {
+                this.parent.classList.remove('paused');
+                btn.textContent = text.pause;
+
+                return;
+            }
+
+            this.parent.classList.add('paused');
+            btn.textContent = text.active;
+        }
+        );
+    }
+}
+
+
+let task_04 = new Task_04();
+
 task_02.init();
+
+task_04.init();
 
 }());
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXMiOltdLCJzb3VyY2VzQ29udGVudCI6W10sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXMiOltdLCJzb3VyY2VzQ29udGVudCI6W10sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
