@@ -98,7 +98,7 @@ gulp.task("serve", () => {
         server: "public"
     });
 
-    browserSync.watch("public/**/*.*").on("change", browserSync.reload);
+    gulp.watch("public/**/*.*").on("change", browserSync.reload);
 });
 
 gulp.task("dev", gulp.series("build", gulp.parallel("watch", "serve")));

@@ -1,0 +1,66 @@
+@import '../common/01-variables.less';
+
+.task_03 {
+    background-color: #272C34;
+}
+
+.task__03 {
+    width : 180px;
+    height: 180px;
+
+    border-radius  : 50%;
+    //border       : 1px solid white;
+
+    overflow: hidden;
+}
+
+.pyramid {
+    position: relative;
+
+    &__sun {
+        position        : absolute;
+        z-index         : 2;
+        top             : 7px;
+        left            : 73px;
+        width           : 34px;
+        height          : 34px;
+        border-radius   : 50%;
+        background      : #FFEF00;
+        transform-origin: 50% 400%;
+        animation       : sunUpDown 4s cubic-bezier(.4, 0, .49, 1) infinite;
+    }
+
+    &__sky {
+        width : 100%;
+        height: 124px;
+
+        background-color: #7DDFFC;
+    }
+
+    &__sand {
+        width           : 100%;
+        height          : 56px;
+        background-color: #F0DE75;
+    }
+}
+
+@keyframes sunUpDown {
+    0% {
+        background: #F57209;
+        transform : rotate(-70deg);
+    }
+
+    30% {
+        background: #FFEF00;
+        transform : rotate(-28deg);
+    }
+
+    70% {
+        background: #FFEF00;
+    }
+
+    100% {
+        background: #F57209;
+        transform : rotate(70deg);
+    }
+}
