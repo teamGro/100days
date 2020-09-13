@@ -41,9 +41,39 @@ class Task_02 {
 
 let task_02 = new Task_02();
 
+class Task_03 {
+    constructor(parent) {
+        this.parent = document.querySelector('.pyramid');
+    }
+
+    init() {
+        let text = {
+            active: 'Run',
+            pause: 'Stop'
+        };
+
+        let btn = document.querySelector('#task-03-btn');
+        btn.addEventListener('click', () => {
+            if (this.parent.classList.contains('paused')) {
+                this.parent.classList.remove('paused');
+                btn.textContent = text.pause;
+
+                return;
+            }
+
+            this.parent.classList.add('paused');
+            btn.textContent = text.active;
+        }
+        );
+    }
+}
+
+
+let task_03 = new Task_03();
+
 class Task_04 {
     constructor(parent) {
-        this.parent = document.querySelector('.circle_container');      
+        this.parent = document.querySelector('.circle__container');
     }
 
     init() {
@@ -53,7 +83,10 @@ class Task_04 {
         };
 
         let btn = document.querySelector('#task-04-btn');
+        console.log(this.parent);
+        console.log(document.querySelector('.circle__container'));
         btn.addEventListener('click', () => {
+            console.log(btn);
             if (this.parent.classList.contains('paused')) {
                 this.parent.classList.remove('paused');
                 btn.textContent = text.pause;
@@ -73,8 +106,10 @@ let task_04 = new Task_04();
 
 task_02.init();
 
+task_03.init();
+
 task_04.init();
 
 }());
 
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXMiOltdLCJzb3VyY2VzQ29udGVudCI6W10sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXMiOltdLCJzb3VyY2VzQ29udGVudCI6W10sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==

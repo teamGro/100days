@@ -1,6 +1,6 @@
-class Task_04 {
+class Task_03 {
     constructor(parent) {
-        this.parent = document.querySelector('.circle__container');
+        this.parent = document.querySelector('.pyramid');
     }
 
     init() {
@@ -9,11 +9,8 @@ class Task_04 {
             pause: 'Stop'
         }
 
-        let btn = document.querySelector('#task-04-btn');
-        console.log(this.parent);
-        console.log(document.querySelector('.circle__container'));
+        let btn = document.querySelector('#task-03-btn');
         btn.addEventListener('click', () => {
-            console.log(btn)
             if (this.parent.classList.contains('paused')) {
                 this.parent.classList.remove('paused');
                 btn.textContent = text.pause;
@@ -29,5 +26,5 @@ class Task_04 {
 }
 
 
-let task_04 = new Task_04();
-export default task_04;
+let task_03 = new Task_03();
+export default task_03;

@@ -1,7 +1,7 @@
 .task {
     &__04 {
-        width: 100%;
-        height: 100%;
+        width           : 100%;
+        height          : 100%;
         background-color: #E56262;
     }
 }
@@ -10,83 +10,77 @@
     position: relative;
 
     &__elem {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
+        position        : absolute;
+        left            : 0;
+        right           : 0;
+        top             : 0;
+        bottom          : 0;
+        margin          : auto;
         background-color: #fff;
-        border-radius: 50%;
+        border-radius   : 50%;
 
         &--big {
-            width: 90px;
-            height: 90px;
-            animation: bigCircle 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
+            width    : 90px;
+            height   : 90px;
+            animation: bigCircle 2s cubic-bezier(.21, .99, .65, .94) alternate both infinite;
         }
 
         &--middle {
-            width: 60px;
-            height: 60px;
-            animation: middleCircle 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
+            width    : 60px;
+            height   : 60px;
+            animation: middleCircle 2s cubic-bezier(.21, .99, .65, .94) alternate both infinite;
         }
 
         &--little {
-            width: 30px;
-            height: 30px;
-            animation: littleCircle 2s cubic-bezier(.21,.99,.65,.94) alternate both infinite;
+            width    : 30px;
+            height   : 30px;
+            animation: littleCircle 2s cubic-bezier(.21, .99, .65, .94) alternate both infinite;
         }
-    }
-
-    &__btn {
-        width: 50px;
-        height: 20px;
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-        background-color: inherit;
-        box-shadow: none;
-        border: none;
-        border-radius: 10px;
     }
 }
 
 @keyframes bigCircle {
-    from, 10% {
-        transform: scale(0);
+
+    from,
+    10% {
+        transform : scale(0);
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     to {
-        transform: scale(1);
+        transform : scale(1);
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 }
 
 @keyframes middleCircle {
-    from, 40% {
-        transform: scale(0);
+
+    from,
+    40% {
+        transform : scale(0);
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     to {
-        transform: scale(1);
+        transform : scale(1);
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 }
 
 @keyframes littleCircle {
-    from, 70% {
-        transform: scale(0);
+
+    from,
+    70% {
+        transform : scale(0);
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     to {
-        transform: scale(1);
+        transform : scale(1);
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 }
 
-.paused > * {
+.paused>* {
     animation-play-state: paused;
 }
